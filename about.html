@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Mira Costa Aerospace Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-grid p { color: var(--text-mid); margin-bottom: 1.1rem; }
+
+    .image-block {
+      position: sticky;
+      top: calc(var(--nav-h) + 2rem);
+    }
+
+    .img-placeholder {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      aspect-ratio: 4/5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 2rem;
+      font-size: 2rem;
+    }
+
+    .img-caption {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      margin-top: 0.8rem;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Team ── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .team-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      transition: border-color 0.2s;
+    }
+
+    .team-card:hover { border-color: var(--border2); }
+
+    .avatar {
+      width: 56px;
+      height: 56px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .team-card h3 { font-size: 0.95rem; margin-bottom: 0.2rem; }
+
+    .team-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .team-card p { font-size: 0.82rem; color: var(--text-mid); }
+
+    /* ── Values ── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .value-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .value-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--border2);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .value-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+    .value-card p { font-size: 0.85rem; color: var(--text-mid); }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .image-block { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo"><div class="logo-mark">🛸</div> MCAC</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta">Join Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <div class="tag">Who we are</div>
+    <h1>About MCAC</h1>
+    <p>A student-run aerospace club at Mira Costa High School in Manhattan Beach, CA.</p>
+  </div>
+
+  <!-- STORY -->
+  <section class="section">
+    <div class="about-grid">
+      <div>
+        <div class="tag">Our story</div>
+        <h2 class="section-title">Built from the ground up</h2>
+        <p>
+          The Mira Costa Aerospace Club was founded by a group of students who wanted more than classroom theory — they wanted to actually build things and send them into the sky. What started as an after-school group building Estes kits has grown into one of the most active student aerospace programs in the South Bay.
+        </p>
+        <p>
+          Today MCAC has three active divisions: Rocketry (in partnership with the Hermosa Beach Rocketry Club), Drone & UAV, and Research. Every division is entirely student-led, with faculty and community mentors offering guidance.
+        </p>
+        <p>
+          We believe the best way to learn aerospace engineering is to do aerospace engineering. Every member builds something real, launches something real, and learns from both the successes and the failures — usually spectacular ones.
+        </p>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:1rem;">Join us →</a>
+      </div>
+
+      <div class="image-block">
+        <div class="img-placeholder">
+          📷
+          <!-- Replace with: <img src="../images/club-photo.jpg" alt="MCAC members"> -->
+        </div>
+        <div class="img-caption">// Replace with a club photo or launch day image</div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- VALUES -->
+  <section class="section section-alt">
+    <div class="tag">What drives us</div>
+    <h2 class="section-title">Our values</h2>
+    <p class="section-sub">Four principles that shape everything we build.</p>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-num">01</div>
+        <h3>Learn by doing</h3>
+        <p>No passive learning here. Every member builds, launches, and iterates from day one.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">02</div>
+        <h3>Fail forward</h3>
+        <p>Bad launches teach better lessons than perfect simulations. We embrace every CATO and hard landing.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">03</div>
+        <h3>Collaborate</h3>
+        <p>Aerospace is a team sport. We mentor each other, share knowledge, and celebrate wins together.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">04</div>
+        <h3>Give back</h3>
+        <p>We run youth workshops and outreach events so the next generation catches the aerospace bug too.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- TEAM -->
+  <section class="section">
+    <div class="tag">Leadership</div>
+    <h2 class="section-title">Club officers</h2>
+    <p class="section-sub">Student-led, faculty-advised. Update these with your actual officers.</p>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="avatar">👤</div>
+        <h3>Alex Johnson</h3>
+        <div class="team-role">President</div>
+        <p>Senior. Rocketry division lead, NAR Level 1 certified. Applying to Caltech.</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar">👤</div>
+        <h3>Maya Patel</h3>
+        <div class="team-role">VP, Drone Division</div>
+        <p>Junior. FPV pilot and Python developer. Leads the autonomous navigation sub-team.</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar">👤</div>
+        <h3>Tyler Nguyen</h3>
+        <div class="team-role">VP, Research</div>
+        <p>Junior. Manages payload experiments and data analysis for all flight programs.</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar">👤</div>
+        <h3>Sofia Reyes</h3>
+        <div class="team-role">Secretary / Outreach</div>
+        <p>Sophomore. Coordinates youth workshops, social media, and club communications.</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar">🎓</div>
+        <h3>Mr. [Advisor Name]</h3>
+        <div class="team-role">Faculty Advisor</div>
+        <p>Physics teacher at Mira Costa. Provides guidance and school liaison support.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">🛸 Mira Costa Aerospace Club</div>
+        <div class="footer-tagline">Mira Costa High School · Manhattan Beach, CA</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="rocketry/index.html">↳ HBRC Rocketry</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">© 2025 Mira Costa Aerospace Club · All rights reserved</div>
+  </footer>
+
+</body>
+</html>

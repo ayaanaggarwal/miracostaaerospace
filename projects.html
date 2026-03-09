@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Mira Costa Aerospace Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .filter-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-mid);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover { border-color: var(--border2); transform: translateY(-3px); }
+
+    .project-image {
+      background: var(--bg3);
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .project-status {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid;
+    }
+
+    .status-active { color: var(--green); border-color: var(--green); background: rgba(34,197,94,0.08); }
+    .status-complete { color: var(--text-dim); border-color: var(--border); }
+    .status-planning { color: var(--gold); border-color: var(--gold); background: rgba(245,158,11,0.08); }
+
+    .project-body { padding: 1.8rem; }
+
+    .project-division {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card h3 { font-size: 1.1rem; margin-bottom: 0.6rem; }
+    .project-card p { font-size: 0.87rem; color: var(--text-mid); margin-bottom: 1.2rem; }
+
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+    .project-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      padding: 0.2rem 0.6rem;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-dim);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><div class="logo-mark">🛸</div> MCAC</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta">Join Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <div class="tag">What we build</div>
+    <h1>Projects</h1>
+    <p>Active builds, completed flights, and upcoming experiments across all three divisions.</p>
+  </div>
+
+  <section class="section">
+    <div class="filter-bar">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">🚀 Rocketry</button>
+      <button class="filter-btn">🛸 Drone / UAV</button>
+      <button class="filter-btn">🔬 Research</button>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-image">
+          🚀
+          <span class="project-status status-active">Active</span>
+        </div>
+        <div class="project-body">
+          <div class="project-division">Rocketry</div>
+          <h3>Altitude Record Attempt — 4" Fiberglass</h3>
+          <p>A 4-inch fiberglass airframe targeting 15,000 ft on an L motor. Dual deployment with Featherweight Raven altimeter. Launch planned for Spring 2025.</p>
+          <div class="project-tags">
+            <span class="project-tag">L-motor</span>
+            <span class="project-tag">Fiberglass</span>
+            <span class="project-tag">Dual deploy</span>
+            <span class="project-tag">OpenRocket</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          🛸
+          <span class="project-status status-active">Active</span>
+        </div>
+        <div class="project-body">
+          <div class="project-division">Drone / UAV</div>
+          <h3>Autonomous Waypoint Drone</h3>
+          <p>Building a fixed-wing UAV capable of flying a pre-programmed GPS waypoint route using ArduPilot and a Pixhawk flight controller. Target range: 2km.</p>
+          <div class="project-tags">
+            <span class="project-tag">ArduPilot</span>
+            <span class="project-tag">Pixhawk</span>
+            <span class="project-tag">Fixed-wing</span>
+            <span class="project-tag">GPS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          🔬
+          <span class="project-status status-active">Active</span>
+        </div>
+        <div class="project-body">
+          <div class="project-division">Research</div>
+          <h3>Atmospheric Payload — CanSat</h3>
+          <p>A soda-can-sized payload measuring temperature, pressure, humidity, and UV index during rocket flights. Data logged to SD card and transmitted live via LoRa radio.</p>
+          <div class="project-tags">
+            <span class="project-tag">CanSat</span>
+            <span class="project-tag">Arduino</span>
+            <span class="project-tag">LoRa</span>
+            <span class="project-tag">Sensors</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          🏁
+          <span class="project-status status-complete">Complete</span>
+        </div>
+        <div class="project-body">
+          <div class="project-division">Rocketry</div>
+          <h3>L1 Certification Rocket — "Mustang"</h3>
+          <p>Our club's first successful L1 certification flight. 3" diameter phenolic airframe, H238 motor. Successfully flown and recovered at Lucerne Dry Lake, November 2024.</p>
+          <div class="project-tags">
+            <span class="project-tag">H-motor</span>
+            <span class="project-tag">Phenolic</span>
+            <span class="project-tag">NAR L1</span>
+            <span class="project-tag">Recovered</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          🤖
+          <span class="project-status status-planning">Planning</span>
+        </div>
+        <div class="project-body">
+          <div class="project-division">Drone / UAV</div>
+          <h3>Computer Vision Target Tracker</h3>
+          <p>A quadcopter equipped with a Raspberry Pi and camera to autonomously detect and follow a colored ground target. Uses OpenCV for real-time image processing.</p>
+          <div class="project-tags">
+            <span class="project-tag">OpenCV</span>
+            <span class="project-tag">Raspberry Pi</span>
+            <span class="project-tag">Quadcopter</span>
+            <span class="project-tag">Python</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          📡
+          <span class="project-status status-planning">Planning</span>
+        </div>
+        <div class="project-body">
+          <div class="project-division">Research</div>
+          <h3>High-Altitude Balloon Experiment</h3>
+          <p>Weather balloon payload targeting 80,000 ft. Will carry a GoPro, GPS tracker, and atmospheric sensors. Recovery via parachute and GPS coordinates.</p>
+          <div class="project-tags">
+            <span class="project-tag">HAB</span>
+            <span class="project-tag">GPS</span>
+            <span class="project-tag">GoPro</span>
+            <span class="project-tag">Stratosphere</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">🛸 Mira Costa Aerospace Club</div>
+        <div class="footer-tagline">Mira Costa High School · Manhattan Beach, CA</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="rocketry/index.html">↳ HBRC Rocketry</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">© 2025 Mira Costa Aerospace Club · All rights reserved</div>
+  </footer>
+
+</body>
+</html>

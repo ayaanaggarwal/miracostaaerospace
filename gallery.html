@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Mira Costa Aerospace Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .gallery-grid {
+      columns: 3 220px;
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover .overlay { opacity: 1; }
+
+    .g-placeholder {
+      background: var(--bg3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 2rem;
+    }
+
+    .gallery-item:nth-child(4n+1) .g-placeholder { height: 240px; }
+    .gallery-item:nth-child(4n+2) .g-placeholder { height: 180px; }
+    .gallery-item:nth-child(4n+3) .g-placeholder { height: 300px; }
+    .gallery-item:nth-child(4n)   .g-placeholder { height: 200px; }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10,14,26,0.8);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.2rem;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .overlay-caption { font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .overlay-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+    }
+
+    .upload-tip {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      font-size: 0.88rem;
+      color: var(--text-mid);
+    }
+
+    .upload-tip code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><div class="logo-mark">🛸</div> MCAC</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta">Join Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <div class="tag">Visual archive</div>
+    <h1>Gallery</h1>
+    <p>Launches, builds, events, and everything in between.</p>
+  </div>
+
+  <section class="section">
+    <div class="upload-tip">
+      <strong>Adding photos:</strong> Upload images to your <code>images/</code> folder on GitHub, then replace each emoji placeholder below with <code>&lt;img src="../images/photo.jpg" alt="..."&gt;</code>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <div class="g-placeholder">🚀</div>
+        <div class="overlay">
+          <div class="overlay-caption">First L1 certification flight</div>
+          <div class="overlay-date">Nov 2024 · Lucerne Dry Lake</div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="g-placeholder">🛸</div>
+        <div class="overlay">
+          <div class="overlay-caption">Drone field test day</div>
+          <div class="overlay-date">Oct 2024 · El Camino Park</div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="g-placeholder">🔬</div>
+        <div class="overlay">
+          <div class="overlay-caption">CanSat payload assembly</div>
+          <div class="overlay-date">Jan 2025 · Club workshop</div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="g-placeholder">🏜️</div>
+        <div class="overlay">
+          <div class="overlay-caption">Launch site sunrise</div>
+          <div class="overlay-date">Mar 2025 · Lucerne Dry Lake</div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="g-placeholder">👥</div>
+        <div class="overlay">
+          <div class="overlay-caption">Club photo — Fall semester</div>
+          <div class="overlay-date">Sep 2024 · Mira Costa HS</div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="g-placeholder">🔥</div>
+        <div class="overlay">
+          <div class="overlay-caption">Ignition sequence</div>
+          <div class="overlay-date">Nov 2024 · Lucerne Dry Lake</div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="g-placeholder">🛠️</div>
+        <div class="overlay">
+          <div class="overlay-caption">Build night — fin alignment</div>
+          <div class="overlay-date">Oct 2024 · Workshop</div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="g-placeholder">🌙</div>
+        <div class="overlay">
+          <div class="overlay-caption">Night launch — HBRC event</div>
+          <div class="overlay-date">Jul 2024 · Lucerne Dry Lake</div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="g-placeholder">📡</div>
+        <div class="overlay">
+          <div class="overlay-caption">Payload radio testing</div>
+          <div class="overlay-date">Feb 2025 · Workshop</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">🛸 Mira Costa Aerospace Club</div>
+        <div class="footer-tagline">Mira Costa High School · Manhattan Beach, CA</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="rocketry/index.html">↳ HBRC Rocketry</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">© 2025 Mira Costa Aerospace Club · All rights reserved</div>
+  </footer>
+
+</body>
+</html>

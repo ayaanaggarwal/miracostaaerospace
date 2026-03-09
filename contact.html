@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Us — Mira Costa Aerospace Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.4rem; }
+
+    .form-group label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      padding: 0.75rem 1rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.15s;
+      width: 100%;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--accent); }
+
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+
+    .form-note { font-size: 0.78rem; color: var(--text-dim); margin-top: 0.8rem; }
+
+    /* Sidebar */
+    .sidebar {
+      position: sticky;
+      top: calc(var(--nav-h) + 2rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .info-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+    }
+
+    .info-card h4 { font-size: 0.95rem; margin-bottom: 1.2rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border); }
+
+    .info-row { display: flex; gap: 0.8rem; margin-bottom: 1rem; align-items: flex-start; }
+    .info-icon { font-size: 1rem; flex-shrink: 0; }
+    .info-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.15rem; }
+    .info-value { font-size: 0.87rem; color: var(--text-mid); }
+
+    .division-pills { display: flex; flex-direction: column; gap: 0.8rem; }
+
+    .division-pill {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .division-pill-icon { font-size: 1.2rem; }
+
+    .division-pill-text h5 { font-size: 0.88rem; margin-bottom: 0.1rem; }
+    .division-pill-text p { font-size: 0.78rem; color: var(--text-dim); }
+
+    @media (max-width: 860px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><div class="logo-mark">🛸</div> MCAC</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="active nav-cta">Join Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <div class="tag">Get involved</div>
+    <h1>Join MCAC</h1>
+    <p>Open to all Mira Costa students. No experience required — just enthusiasm.</p>
+  </div>
+
+  <section class="section">
+    <div class="contact-layout">
+
+      <div>
+        <div class="tag">Membership form</div>
+        <h2 class="section-title">Express interest</h2>
+        <p class="section-sub">Fill this out and we'll reach out before the next meeting.</p>
+
+        <!--
+          To make this form send emails: sign up at formspree.io (free),
+          create a form, and replace YOUR_FORM_ID below with your actual ID.
+        -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>First name *</label>
+              <input type="text" name="first_name" required placeholder="Alex" />
+            </div>
+            <div class="form-group">
+              <label>Last name *</label>
+              <input type="text" name="last_name" required placeholder="Johnson" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>School email *</label>
+            <input type="email" name="email" required placeholder="ajohnson25@student.hbuhsd.edu" />
+          </div>
+
+          <div class="form-group">
+            <label>Grade</label>
+            <select name="grade">
+              <option value="">Select…</option>
+              <option>9th grade (Freshman)</option>
+              <option>10th grade (Sophomore)</option>
+              <option>11th grade (Junior)</option>
+              <option>12th grade (Senior)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Which division interests you most?</label>
+            <select name="division">
+              <option value="">Select…</option>
+              <option>🚀 Rocketry</option>
+              <option>🛸 Drone / UAV</option>
+              <option>🔬 Research & Science</option>
+              <option>All of them!</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Any relevant experience? (optional)</label>
+            <textarea name="experience" placeholder="Coding, electronics, model rockets, 3D printing, anything aerospace-related…"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send →</button>
+          <p class="form-note">// We usually reply within a day or two. Meetings are open to anyone — no form required.</p>
+
+        </form>
+      </div>
+
+      <aside class="sidebar">
+        <div class="info-card">
+          <h4>📬 Contact & meetings</h4>
+          <div class="info-row">
+            <div class="info-icon">✉️</div>
+            <div>
+              <div class="info-label">Email</div>
+              <div class="info-value"><a href="mailto:aerospace@miracosta.edu" style="color:var(--accent);">aerospace@miracosta.edu</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📅</div>
+            <div>
+              <div class="info-label">Weekly meetings</div>
+              <div class="info-value">Every [Day] at [Time]<br>Room [###], Mira Costa HS</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📍</div>
+            <div>
+              <div class="info-label">School address</div>
+              <div class="info-value">1401 Artesia Blvd<br>Manhattan Beach, CA 90266</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h4>🚀 Our divisions</h4>
+          <div class="division-pills">
+            <div class="division-pill">
+              <div class="division-pill-icon">🚀</div>
+              <div class="division-pill-text">
+                <h5>Rocketry</h5>
+                <p>Build & launch with HBRC</p>
+              </div>
+            </div>
+            <div class="division-pill">
+              <div class="division-pill-icon">🛸</div>
+              <div class="division-pill-text">
+                <h5>Drone / UAV</h5>
+                <p>Autonomous flight systems</p>
+              </div>
+            </div>
+            <div class="division-pill">
+              <div class="division-pill-icon">🔬</div>
+              <div class="division-pill-text">
+                <h5>Research</h5>
+                <p>Payloads & data science</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h4>❓ FAQ</h4>
+          <p style="font-size:0.85rem; color:var(--text-mid); margin-bottom:0.8rem;"><strong style="color:var(--text);">Do I need experience?</strong><br>Nope. We teach everything from scratch.</p>
+          <p style="font-size:0.85rem; color:var(--text-mid); margin-bottom:0.8rem;"><strong style="color:var(--text);">Is there a cost?</strong><br>Club membership is free. Some launch trips have a small fee for fuel/transport.</p>
+          <p style="font-size:0.85rem; color:var(--text-mid);"><strong style="color:var(--text);">Can I join mid-year?</strong><br>Absolutely — we welcome new members any time.</p>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">🛸 Mira Costa Aerospace Club</div>
+        <div class="footer-tagline">Mira Costa High School · Manhattan Beach, CA</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="rocketry/index.html">↳ HBRC Rocketry</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">© 2025 Mira Costa Aerospace Club · All rights reserved</div>
+  </footer>
+
+</body>
+</html>
